@@ -1,12 +1,17 @@
+from pathlib import Path
+
 import cv2
 import pickle
+
+ROOT = Path(__file__).resolve().parent.parent
+IMAGE_PATH = ROOT / "frontend" / "assets" / "media" / "park_image.png"
+POSITIONS_PATH = ROOT / "backend" / "CarParkPos"
 
 width, height = 70, 34
 display_width, display_height = 438, 520
 
-# Load parking positions from file
 try:
-    with open('backend/CarParkPos', 'rb') as f:
+    with open(POSITIONS_PATH, "rb") as f:
         posList = pickle.load(f)
 except FileNotFoundError:
     print("CarParkPos file not found. Starting with an empty position list.")
@@ -21,12 +26,12 @@ def mouseClick(events, x, y, flags, params):
             if x1 < x < x1 + width and y1 < y < y1 + height:
                 posList.pop(i)
 
-    with open('backend/CarParkPos', 'wb') as f:
+    with open(POSITIONS_PATH, "wb") as f:
         pickle.dump(posList, f)
 
 # Main loop
 while True:
-    img = cv2.imread('./frontend/assets/media/park_image.png')
+    img = cv2.imread(str(IMAGE_PATH))
     if img is None:
         print("Error: Could not load the image. Check the file path.")
         break

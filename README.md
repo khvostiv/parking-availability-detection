@@ -10,24 +10,57 @@ This project is designed to help users locate available parking spots in real ti
 - Video feed and image display for parking lot status using Flask
 - Backend integration for processing parking-related data
 
+## Project layout
+
+```
+app.js                         Express map UI (port 3000)
+frontend/                      Google Maps page, icons, and sample lot video
+backend/app.py                Flask camera page (port 5000)
+backend/main.py               Occupancy detection on the lot video
+backend/CarParkPos            Saved stall coordinates
+backend/ParkingSpacePicker.py Tool to mark stalls on park_image.png
+```
 
 ## Setup and Installation
-1.	Extract the Hackatoon project folder and open it in Visual Studio Code or your preferred code editor. 
-2.	Open Terminal.
-3.  Run 'npm install' to install node_modules
-4.	Install concurrently (it is used to run the frontend and backend servers at the same time.):
-        npm install concurrently --save-dev
-5.	Start both the frontend and backend servers using concurrently:
-        npm run start
-6.	Open a browser and go to http://localhost:3000 to access the web app interface
-7.	To view the parking lot video feed and check real-time parking availability, go to http://localhost:5000 
-
 
 ### Prerequisites
 - Python 3.x
 - Node.js and npm
 - Google Maps API key
-- Flask (Python package)
+- Flask, OpenCV, and cvzone (installed from `backend/requirements.txt`)
+
+1. Clone this repository and open the project folder in your editor.
+2. Open a terminal in the project root.
+3. Install Python packages:
+
+   ```bash
+   pip install -r backend/requirements.txt
+   ```
+
+4. Install Node packages:
+
+   ```bash
+   npm install
+   ```
+
+5. Start the Flask camera and the map server together:
+
+   ```bash
+   npm start
+   ```
+
+6. Open [http://localhost:3000](http://localhost:3000) for the map.
+7. Open [http://localhost:5000](http://localhost:5000) for the parking-lot video feed.
+
+`Usage_Instructions.docx` has the same run steps in Word format.
+
+To re-mark stall boxes on the sample image:
+
+```bash
+python backend/ParkingSpacePicker.py
+```
+
+Left-click adds a stall, right-click removes one, and `q` saves and quits.
 
 ## Future Improvements
 - Real-time Tracking of Parking Availability: Use live video feeds and machine learning to automatically update parking availability in real-time.
@@ -35,7 +68,7 @@ This project is designed to help users locate available parking spots in real ti
 - User Authentication: Allow users to log in and save their parking history.
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
 
 ## Acknowledgements
 - Google Maps API for providing mapping and geolocation services.

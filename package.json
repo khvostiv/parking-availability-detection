@@ -1,28 +1,25 @@
 {
-  "name": "hackatoon",
+  "name": "parking-availability-detection",
   "version": "1.0.0",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib",
-    "public": "public",
-    "src": "src"
-  },
+  "description": "Find nearby parking on Google Maps and check lot occupancy from a live video feed.",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"C:/Users/User/AppData/Local/Programs/Python/Python313/python.exe backend/app.py\" \"node app.js\""
+    "start": "concurrently -n flask,web -c blue,green \"node scripts/run-flask.js\" \"node app.js\"",
+    "start:web": "node app.js",
+    "start:flask": "node scripts/run-flask.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": [
+    "parking",
+    "flask",
+    "maps"
+  ],
+  "author": "Vasilina Khvostikova",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.21.1",
-    "hackatoon": "file:",
-    "jsdom": "^25.0.1",
-    "mongoose": "^8.8.1"
+    "express": "^4.21.1"
   },
   "devDependencies": {
-    "concurrently": "^9.1.0",
-    "nodemon": "^3.1.7"
+    "concurrently": "^9.1.0"
   }
 }
