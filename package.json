@@ -1,0 +1,28 @@
+{
+  "name": "hackatoon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "public": "public",
+    "src": "src"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"C:/Users/User/AppData/Local/Programs/Python/Python313/python.exe backend/app.py\" \"node app.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.1",
+    "hackatoon": "file:",
+    "jsdom": "^25.0.1",
+    "mongoose": "^8.8.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "nodemon": "^3.1.7"
+  }
+}
