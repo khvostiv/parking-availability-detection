@@ -1,5 +1,9 @@
 # Hackatoon Parking Lot Project
 
+**Demo:** [https://khvostiv.github.io/parking-availability-detection/](https://khvostiv.github.io/parking-availability-detection/)
+
+The hosted demo is the map plus a sample occupancy overlay. The live lot video still needs Flask on your machine (`npm start`).
+
 ## Project Overview
 This project is designed to help users locate available parking spots in real time. It combines frontend and backend functionalities, utilizing geolocation and Google Maps API to display nearby parking lots, with Flask serving as the backend and Node.js for managing server-side functionality.
 
@@ -22,7 +26,7 @@ backend/data/CarParkPos.pkl   Saved stall coordinates
 backend/tools/pick_spaces.py  Tool to mark stalls on the still image
 backend/templates/            Flask HTML
 backend/static/               Flask CSS
-docs/                          Usage instructions
+docs/                          GitHub Pages demo and usage instructions
 scripts/run-flask.js           Starts Flask with the local Python
 ```
 

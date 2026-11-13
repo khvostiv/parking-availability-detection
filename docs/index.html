@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nearby Parking Availability</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+  <div class="search-container">
+    <input id="autocomplete" type="text" placeholder="Type your address destination" class="search-bar">
+    <button class="bookmark-icon"><i class="material-icons">bookmark</i></button>
+  </div>
+
+  <div id="map" style="height: 100vh; width: 100%;"></div>
+
+  <div class="bottom-nav">
+    <button class="nav-icon"><i class="material-icons">directions_car</i></button>
+    <button class="nav-icon"><i class="material-icons">pedal_bike</i></button>
+    <button class="nav-icon"><i class="material-icons">settings</i></button>
+  </div>
+
+  <!-- External JS file -->
+  <script src="js/index.js" defer></script>
+</body>
+</html>

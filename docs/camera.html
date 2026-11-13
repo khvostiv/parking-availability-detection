@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Lot Status</title>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/camera.css">
+</head>
+<body>
+    <h1>Parking Lot Status</h1>
+    <div class="video-container">
+        <img src="media/lot-status.png" alt="Sample parking lot occupancy with free and occupied stalls marked">
+    </div>
+
+    <div class="legend">
+        <div class="legend-item">
+            <span class="legend-color green"></span> Free Spot
+        </div>
+        <div class="legend-item">
+            <span class="legend-color red"></span> Occupied Spot
+        </div>
+    </div>
+
+    <p class="demo-note">Hosted demo of the occupancy overlay on the sample lot. The live camera feed runs locally with Flask at port 5000.</p>
+
+    <div class="button-container">
+        <a href="index.html" class="button">Back to Map</a>
+    </div>
+</body>
+</html>

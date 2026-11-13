@@ -162,8 +162,12 @@ function searchParkingNearby(location, map, infoWindow, markers) {
             if (availabilityButton) {
               availabilityButton.addEventListener("click", () => {
 
-                const videoUrl = "http://localhost:5000";
-                window.location.href = videoUrl;
+                const onLocalHost =
+                  window.location.hostname === "localhost" ||
+                  window.location.hostname === "127.0.0.1";
+                window.location.href = onLocalHost
+                  ? "http://localhost:5000"
+                  : "camera.html";
               });
             }
           });

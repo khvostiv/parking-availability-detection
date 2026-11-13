@@ -1,0 +1,75 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body, html {
+height: 100%;
+font-family: Arial, sans-serif;
+background-color: #007acc;
+}
+
+.search-container {
+display: flex;
+align-items: center;
+padding: 10px;
+background-color: #007acc;
+}
+
+.search-bar {
+width: 100%;
+padding: 10px;
+border: none;
+border-radius: 5px;
+}
+
+.bookmark-icon {
+background: none;
+border: none;
+margin-left: 10px;
+font-size: 18px;
+color: white;
+cursor: pointer;
+}
+
+#map {
+height: calc(100% - 100px);
+}
+
+.nav-icon {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 999;
+  }
+
+
+.see-availability-button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+  
+.see-availability-button:hover {
+    background-color: #45a049;
+}
+
+
