@@ -13,12 +13,17 @@ This project is designed to help users locate available parking spots in real ti
 ## Project layout
 
 ```
-app.js                         Express map UI (port 3000)
-frontend/                      Google Maps page, icons, and sample lot video
+app.js                         Express map server (port 3000)
+frontend/                      Map page, CSS, JS, and marker icons
 backend/app.py                Flask camera page (port 5000)
-backend/main.py               Occupancy detection on the lot video
-backend/CarParkPos            Saved stall coordinates
-backend/ParkingSpacePicker.py Tool to mark stalls on park_image.png
+backend/detector.py           Occupancy detection on the lot video
+backend/data/media/           Sample lot video and still image
+backend/data/CarParkPos.pkl   Saved stall coordinates
+backend/tools/pick_spaces.py  Tool to mark stalls on the still image
+backend/templates/            Flask HTML
+backend/static/               Flask CSS
+docs/                          Usage instructions
+scripts/run-flask.js           Starts Flask with the local Python
 ```
 
 ## Setup and Installation
@@ -52,12 +57,12 @@ backend/ParkingSpacePicker.py Tool to mark stalls on park_image.png
 6. Open [http://localhost:3000](http://localhost:3000) for the map.
 7. Open [http://localhost:5000](http://localhost:5000) for the parking-lot video feed.
 
-`Usage_Instructions.docx` has the same run steps in Word format.
+[docs/Usage_Instructions.docx](docs/Usage_Instructions.docx) has the same run steps in Word format.
 
 To re-mark stall boxes on the sample image:
 
 ```bash
-python backend/ParkingSpacePicker.py
+python backend/tools/pick_spaces.py
 ```
 
 Left-click adds a stall, right-click removes one, and `q` saves and quits.

@@ -1,7 +1,15 @@
-from flask import Flask, Response, render_template
-from main import generate_frames
+from pathlib import Path
 
-app = Flask(__name__)
+from detector import generate_frames
+from flask import Flask, Response, render_template
+
+BACKEND_DIR = Path(__file__).resolve().parent
+
+app = Flask(
+    __name__,
+    template_folder=str(BACKEND_DIR / "templates"),
+    static_folder=str(BACKEND_DIR / "static"),
+)
 
 
 @app.route("/")

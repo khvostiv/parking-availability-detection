@@ -6,9 +6,10 @@ import cvzone
 import numpy as np
 import pickle
 
-ROOT = Path(__file__).resolve().parent.parent
-VIDEO_PATH = ROOT / "frontend" / "assets" / "media" / "park_video.mp4"
-POSITIONS_PATH = ROOT / "backend" / "CarParkPos"
+BACKEND_DIR = Path(__file__).resolve().parent
+DATA_DIR = BACKEND_DIR / "data"
+VIDEO_PATH = DATA_DIR / "media" / "park_video.mp4"
+POSITIONS_PATH = DATA_DIR / "CarParkPos.pkl"
 
 cap = cv2.VideoCapture(str(VIDEO_PATH))
 if not cap.isOpened():

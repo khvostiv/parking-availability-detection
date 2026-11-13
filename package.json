@@ -7,6 +7,7 @@
     "start": "concurrently -n flask,web -c blue,green \"node scripts/run-flask.js\" \"node app.js\"",
     "start:web": "node app.js",
     "start:flask": "node scripts/run-flask.js",
+    "pick-spaces": "python3 backend/tools/pick_spaces.py",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

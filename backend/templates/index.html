@@ -4,133 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parking Lot Status</title>
-    <!-- preloading the roboto font reduces the time needed for font rendering -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box;}
-
-        body, html {
-            height: 100%;
-            font-family: 'Roboto', Arial, sans-serif;
-            background: linear-gradient(to bottom, #e3f2fd, #bbdefb);
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #1976d2;
-            margin-top: 20px;
-            text-align: center;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-            max-width: 1000px; 
-            background: #ffffff;
-            border: 6px solid #1976d2;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            margin: 20px 0;
-        }
-
-        .video-container img {
-            display: block;
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .legend {
-            margin-top: 20px;
-            text-align: center;
-            background-color: #ffffff;
-            padding: 15px 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.1rem;
-        }
-
-        .legend-color {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-        }
-
-        .green {
-            background-color: #4caf50;
-        }
-
-        .red {
-            background-color: #f44336;
-        }
-
-        .button-container {
-            margin-top: 20px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .button {
-            padding: 12px 28px;
-            font-size: 1rem;
-            color: #ffffff;
-            background-color: #1976d2;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: 700;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .button:hover {
-            background-color: #1565c0;
-            transform: translateY(-3px);
-        }
-
-        footer {
-            background-color: #1976d2;
-            color: #ffffff;
-            padding: 15px 20px;
-            text-align: center;
-            font-size: 1rem;
-            margin-top: auto;
-            width: 100%;
-            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        footer span {
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>Parking Lot Status</h1>
     <div class="video-container">
-        <!-- loading lazy ensures that video image is loaded when it comes into view -->
-        <img src="{{ url_for('video_feed') }}" alt="Live feed of parking lot showing current availability of parking spaces" loading="lazy">
+        <img src="{{ url_for('video_feed') }}" alt="Live feed of parking lot showing current availability of parking spaces">
     </div>
-    
+
     <div class="legend">
         <div class="legend-item">
             <span class="legend-color green"></span> Free Spot
@@ -139,10 +21,9 @@
             <span class="legend-color red"></span> Occupied Spot
         </div>
     </div>
-    
+
     <div class="button-container">
         <a href="http://localhost:3000/" class="button">Back to Map</a>
     </div>
-
 </body>
 </html>
